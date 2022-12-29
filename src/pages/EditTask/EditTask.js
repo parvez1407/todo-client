@@ -10,7 +10,7 @@ const EditTask = () => {
     const handleEdit = event => {
         event.preventDefault()
         // console.log(review);
-        fetch(`http://localhost:5000/task/${storedTask._id}`, {
+        fetch(`https://todo-server-five.vercel.app/task/${storedTask._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

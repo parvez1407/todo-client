@@ -73,7 +73,7 @@ const Register = () => {
                             }
                             console.log(user);
                             // save the user information to the database
-                            fetch(`http://localhost:5000/user/${user?.email}`, {
+                            fetch(`https://todo-server-five.vercel.app/user/${user?.email}`, {
                                 method: 'PUT',
                                 headers: {
                                     'content-type': 'application/json'
@@ -106,7 +106,7 @@ const Register = () => {
                     }
                     console.log(user);
                     // save the user information to the database
-                    fetch(`http://localhost:5000/user/${user?.email}`, {
+                    fetch(`https://todo-server-five.vercel.app/user/${user?.email}`, {
                         method: 'PUT',
                         headers: {
                             'content-type': 'application/json'

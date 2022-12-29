@@ -12,7 +12,7 @@ const CompletedTask = () => {
     const { data: tasks = [], refetch, isLoading } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/tasks/${user?.email}`);
+            const res = await fetch(`https://todo-server-five.vercel.app/tasks/${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -25,7 +25,7 @@ const CompletedTask = () => {
             id: task
         }
 
-        fetch(`http://localhost:5000/incomplete/${task._id}`, {
+        fetch(`https://todo-server-five.vercel.app/incomplete/${task._id}`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -45,7 +45,7 @@ const CompletedTask = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure, you want to Delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/task/${id}`, {
+            fetch(`https://todo-server-five.vercel.app/task/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -67,7 +67,7 @@ const CompletedTask = () => {
     //         comment,
     //         id
     //     }
-    //     fetch(`http://localhost:5000/comments/${task._id}`, {
+    //     fetch(`https://todo-server-five.vercel.app/comments/${task._id}`, {
     //         method: 'PUT',
     //         headers: {
     //             'content-type': 'application/json'
